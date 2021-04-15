@@ -12,13 +12,22 @@ function createList(x,y){
   return z;
 }
 
+// alphabet array Uppercase Lowercase
+function genCharArray(charA, charZ) {
+  let a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0);
+  for (; i <= j; ++i) {
+      a.push(String.fromCharCode(i));
+  }
+  return a;
+}
+
 function newPassword(inputN, okListNP) {
     var totalList=[];
     
     let tmpN = inputN;
     let tmpList = okListNP;
     let total = tmpList.filter(xz => xz==true).length;
-    var qty = Math.round(inputN/total);
+    var qty = Math.ceil(inputN/total);
 
     // Set up variable ********************************************
     // characterString:  [~`!@#$%^&*()[{]}\|;:'"]`<,>.?/-_ =+]
@@ -27,22 +36,13 @@ function newPassword(inputN, okListNP) {
        tmpSet = ['~','`','!','@','#','$','%','^','&','*','(',')','[','{',']','}','\'','|',';',':','\'','"',']','`','<',',','>','.','?','/','-','_',' ','=','+'];
        totalList.push(createList(qty,tmpSet));
        tmpN -= qty;
-    }
+     }
     // number array
     if (okListNP[1]) {
       tmpSet = '0123456789'.split(''); // string to array
       qty = (tmpN<qty) ? tmpN:qty;
       totalList.push(createList(qty,tmpSet));
-      tmpN -= qty;
-    }
-
-    // alphabet array Uppercase Lowercase
-    function genCharArray(charA, charZ) {
-      let a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0);
-      for (; i <= j; ++i) {
-          a.push(String.fromCharCode(i));
-      }
-      return a;
+      tmpN -= qty;   
     }
 
     if (okListNP[2]) {
@@ -60,8 +60,6 @@ function newPassword(inputN, okListNP) {
     // var exceptSet = ['i', 'l', '1', 'L', 'o', '0', 'O'];
 
     // tmpN=0;
-
-
 
     //combine Lists to create merged Password String
     var finalList=[];
@@ -140,7 +138,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = "<H1>"+password+"</H1>";
 
 }
 
