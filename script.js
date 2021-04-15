@@ -100,10 +100,10 @@ function askNumber(){
 
 function askOption(){
   let aoList = [];
-  aoList.push(confirm("include Symbol?"));
-  aoList.push(confirm("include Number?"));
-  aoList.push(confirm("include Lowercase Character?"));
-  aoList.push(confirm("include Uppercase Character?"));
+  aoList.push(confirm("1. include Symbol?"));
+  aoList.push(confirm("2. include Number?"));
+  aoList.push(confirm("3. include Lowercase Character?"));
+  aoList.push(confirm("4. include Uppercase Character?"));
 
   return aoList;
 }
@@ -114,10 +114,10 @@ function generatePassword() {
   let okList = [false,false,false,false];
 
   num = askNumber();
-  okList[0] = confirm("include Symbol?");
-  okList[1] = confirm("include Number?");
-  okList[2] = confirm("include Lower Character?");
-  okList[3] = confirm("include Uppercase Character?");
+  okList[0] = confirm("1. include Symbol?");
+  okList[1] = confirm("2. include Number?");
+  okList[2] = confirm("3. include Lower Character?");
+  okList[3] = confirm("4. include Uppercase Character?");
   
   // if there is no choice ask them 
   testList = okList;
