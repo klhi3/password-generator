@@ -138,7 +138,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = "<H1>"+password+"</H1>";
+  passwordText.value = password;
 
 }
 
